@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Button Access with Keyboard</title>
+</head>
+
+<body>
+    <!-- Create a button element -->
+    <button id="myButton">Click Me</button>
+
+    <script>
+        // Get a reference to the button element
+        const button = document.getElementById("myButton");
+
+        // Function to perform an action when the button is clicked
+        function buttonClickHandler(button) {
+            alert("Button clicked!   " + button);
+        }
+
+        // Function to perform an action when a specific key is pressed
+        function handleKeyPress(event) {
+            // Check if the key pressed is the "Enter" key (key code 13)
+            if (event.key === 'Shift') {
+                buttonClickHandler(event.key);
+            }
+        }
+
+        // Add a click event listener to the button
+        // button.addEventListener("click", buttonClickHandler);
+
+        // Add a keydown event listener to the document to listen for "Enter" key press
+        document.addEventListener("keydown", handleKeyPress);
+    </script>
+</body>
+
+</html>

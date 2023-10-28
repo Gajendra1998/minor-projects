@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Pop-up</title>
+    <style>
+        /* Styles for the overlay background */
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index:999;
+            /* border: 1px solid red; */
+        }
+
+        /* Styles for the popup container */
+        .popup {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+            max-width: 400px;
+            text-align: center;
+            position: relative;
+            z-index: 9;
+
+        }
+
+        /* Close button styles */
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            color: #777;
+            font-size: 24px;
+        }
+
+        .div2{
+            /* z-index: 999; */
+        } 
+    </style>
+</head>
+<body>
+    <!-- Button to trigger the popup -->
+    
+    <button id="showPopup">Show Error</button>
+
+    <div class="overlay" id="errorPopup">
+        <div class="popup">
+            <span class="close" id="closePopup">&times;</span>
+            <h2>Error Message</h2>
+            <p>Something went wrong. Please try again.</p>
+        </div>
+    </div>
+
+    <!-- The popup container -->
+    <div class="div2">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti autem dicta illo dolorum possimus, sed perspiciatis quasi architecto. Atque repellendus, rerum sit reiciendis laborum excepturi aliquam? Velit fuga placeat harum accusamus ratione vero aliquam nulla dolor illo at quidem odio laborum minus, ducimus perferendis qui tempora laboriosam maxime iure, soluta ea. Labore a, magnam quidem maxime quae placeat modi incidunt amet pariatur quasi voluptatum dolorum quas porro, deleniti natus assumenda vitae laborum? Voluptatem error reprehenderit, laudantium consectetur, esse voluptatum ex tempora itaque quo facilis sapiente officia temporibus enim doloribus quas odit et? Vel vero, reiciendis aspernatur dolorem blanditiis, at quae rerum doloremque aut qui ipsum fuga ut corporis, nobis voluptatibus. Aperiam, amet nisi. Amet accusantium praesentium illo perspiciatis modi id quo animi nemo, labore est cumque repudiandae in ab autem! Deserunt obcaecati, similique praesentium labore neque unde repellendus maxime commodi a eligendi quam debitis voluptatum iste ea suscipit saepe fugit, nulla hic perspiciatis modi. Dolore, cumque excepturi perspiciatis velit voluptates exercitationem ducimus soluta qui nisi doloribus aspernatur esse, maiores aliquam rem officiis perferendis eaque illo rerum laborum aut dolor totam placeat facere! Saepe quo dolorum aspernatur sapiente delectus perferendis officiis natus inventore, maiores tempora ipsa reprehenderit nesciunt odio perspiciatis necessitatibus nulla expedita, modi dolorem blanditiis pariatur! Maxime quidem natus esse non eaque blanditiis provident, enim nesciunt, corrupti voluptatibus reiciendis? Facere sed natus repellat voluptatibus perferendis nemo ab deleniti dolor? Repellendus architecto quasi, incidunt illo rerum quas exercitationem atque iure ipsa explicabo quod nemo aperiam aut ea harum error fugiat ut maiores et delectus, totam hic magni cupiditate. Maxime dolor nobis obcaecati! Maiores excepturi animi, repellat aperiam eos veritatis nihil porro quod temporibus voluptatibus possimus error sapiente rem atque. Alias beatae consequuntur laboriosam commodi velit ullam, consequatur, architecto dolores ipsum illum voluptatem consectetur quaerat illo eligendi earum aut praesentium exercitationem sed.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti autem dicta illo dolorum possimus, sed perspiciatis quasi architecto. Atque repellendus, rerum sit reiciendis laborum excepturi aliquam? Velit fuga placeat harum accusamus ratione vero aliquam nulla dolor illo at quidem odio laborum minus, ducimus perferendis qui tempora laboriosam maxime iure, soluta ea. Labore a, magnam quidem maxime quae placeat modi incidunt amet pariatur quasi voluptatum dolorum quas porro, deleniti natus assumenda vitae laborum? Voluptatem error reprehenderit, laudantium consectetur, esse voluptatum ex tempora itaque quo facilis sapiente officia temporibus enim doloribus quas odit et? Vel vero, reiciendis aspernatur dolorem blanditiis, at quae rerum doloremque aut qui ipsum fuga ut corporis, nobis voluptatibus. Aperiam, amet nisi. Amet accusantium praesentium illo perspiciatis modi id quo animi nemo, labore est cumque repudiandae in ab autem! Deserunt obcaecati, similique praesentium labore neque unde repellendus maxime commodi a eligendi quam debitis voluptatum iste ea suscipit saepe fugit, nulla hic perspiciatis modi. Dolore, cumque excepturi perspiciatis velit voluptates exercitationem ducimus soluta qui nisi doloribus aspernatur esse, maiores aliquam rem officiis perferendis eaque illo rerum laborum aut dolor totam placeat facere! Saepe quo dolorum aspernatur sapiente delectus perferendis officiis natus inventore, maiores tempora ipsa reprehenderit nesciunt odio perspiciatis necessitatibus nulla expedita, modi dolorem blanditiis pariatur! Maxime quidem natus esse non eaque blanditiis provident, enim nesciunt, corrupti voluptatibus reiciendis? Facere sed natus repellat voluptatibus perferendis nemo ab deleniti dolor? Repellendus architecto quasi, incidunt illo rerum quas exercitationem atque iure ipsa explicabo quod nemo aperiam aut ea harum error fugiat ut maiores et delectus, totam hic magni cupiditate. Maxime dolor nobis obcaecati! Maiores excepturi animi, repellat aperiam eos veritatis nihil porro quod temporibus voluptatibus possimus error sapiente rem atque. Alias beatae consequuntur laboriosam commodi velit ullam, consequatur, architecto dolores ipsum illum voluptatem consectetur quaerat illo eligendi earum aut praesentium exercitationem sed.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti autem dicta illo dolorum possimus, sed perspiciatis quasi architecto. Atque repellendus, rerum sit reiciendis laborum excepturi aliquam? Velit fuga placeat harum accusamus ratione vero aliquam nulla dolor illo at quidem odio laborum minus, ducimus perferendis qui tempora laboriosam maxime iure, soluta ea. Labore a, magnam quidem maxime quae placeat modi incidunt amet pariatur quasi voluptatum dolorum quas porro, deleniti natus assumenda vitae laborum? Voluptatem error reprehenderit, laudantium consectetur, esse voluptatum ex tempora itaque quo facilis sapiente officia temporibus enim doloribus quas odit et? Vel vero, reiciendis aspernatur dolorem blanditiis, at quae rerum doloremque aut qui ipsum fuga ut corporis, nobis voluptatibus. Aperiam, amet nisi. Amet accusantium praesentium illo perspiciatis modi id quo animi nemo, labore est cumque repudiandae in ab autem! Deserunt obcaecati, similique praesentium labore neque unde repellendus maxime commodi a eligendi quam debitis voluptatum iste ea suscipit saepe fugit, nulla hic perspiciatis modi. Dolore, cumque excepturi perspiciatis velit voluptates exercitationem ducimus soluta qui nisi doloribus aspernatur esse, maiores aliquam rem officiis perferendis eaque illo rerum laborum aut dolor totam placeat facere! Saepe quo dolorum aspernatur sapiente delectus perferendis officiis natus inventore, maiores tempora ipsa reprehenderit nesciunt odio perspiciatis necessitatibus nulla expedita, modi dolorem blanditiis pariatur! Maxime quidem natus esse non eaque blanditiis provident, enim nesciunt, corrupti voluptatibus reiciendis? Facere sed natus repellat voluptatibus perferendis nemo ab deleniti dolor? Repellendus architecto quasi, incidunt illo rerum quas exercitationem atque iure ipsa explicabo quod nemo aperiam aut ea harum error fugiat ut maiores et delectus, totam hic magni cupiditate. Maxime dolor nobis obcaecati! Maiores excepturi animi, repellat aperiam eos veritatis nihil porro quod temporibus voluptatibus possimus error sapiente rem atque. Alias beatae consequuntur laboriosam commodi velit ullam, consequatur, architecto dolores ipsum illum voluptatem consectetur quaerat illo eligendi earum aut praesentium exercitationem sed.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti autem dicta illo dolorum possimus, sed perspiciatis quasi architecto. Atque repellendus, rerum sit reiciendis laborum excepturi aliquam? Velit fuga placeat harum accusamus ratione vero aliquam nulla dolor illo at quidem odio laborum minus, ducimus perferendis qui tempora laboriosam maxime iure, soluta ea. Labore a, magnam quidem maxime quae placeat modi incidunt amet pariatur quasi voluptatum dolorum quas porro, deleniti natus assumenda vitae laborum? Voluptatem error reprehenderit, laudantium consectetur, esse voluptatum ex tempora itaque quo facilis sapiente officia temporibus enim doloribus quas odit et? Vel vero, reiciendis aspernatur dolorem blanditiis, at quae rerum doloremque aut qui ipsum fuga ut corporis, nobis voluptatibus. Aperiam, amet nisi. Amet accusantium praesentium illo perspiciatis modi id quo animi nemo, labore est cumque repudiandae in ab autem! Deserunt obcaecati, similique praesentium labore neque unde repellendus maxime commodi a eligendi quam debitis voluptatum iste ea suscipit saepe fugit, nulla hic perspiciatis modi. Dolore, cumque excepturi perspiciatis velit voluptates exercitationem ducimus soluta qui nisi doloribus aspernatur esse, maiores aliquam rem officiis perferendis eaque illo rerum laborum aut dolor totam placeat facere! Saepe quo dolorum aspernatur sapiente delectus perferendis officiis natus inventore, maiores tempora ipsa reprehenderit nesciunt odio perspiciatis necessitatibus nulla expedita, modi dolorem blanditiis pariatur! Maxime quidem natus esse non eaque blanditiis provident, enim nesciunt, corrupti voluptatibus reiciendis? Facere sed natus repellat voluptatibus perferendis nemo ab deleniti dolor? Repellendus architecto quasi, incidunt illo rerum quas exercitationem atque iure ipsa explicabo quod nemo aperiam aut ea harum error fugiat ut maiores et delectus, totam hic magni cupiditate. Maxime dolor nobis obcaecati! Maiores excepturi animi, repellat aperiam eos veritatis nihil porro quod temporibus voluptatibus possimus error sapiente rem atque. Alias beatae consequuntur laboriosam commodi velit ullam, consequatur, architecto dolores ipsum illum voluptatem consectetur quaerat illo eligendi earum aut praesentium exercitationem sed.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti autem dicta illo dolorum possimus, sed perspiciatis quasi architecto. Atque repellendus, rerum sit reiciendis laborum excepturi aliquam? Velit fuga placeat harum accusamus ratione vero aliquam nulla dolor illo at quidem odio laborum minus, ducimus perferendis qui tempora laboriosam maxime iure, soluta ea. Labore a, magnam quidem maxime quae placeat modi incidunt amet pariatur quasi voluptatum dolorum quas porro, deleniti natus assumenda vitae laborum? Voluptatem error reprehenderit, laudantium consectetur, esse voluptatum ex tempora itaque quo facilis sapiente officia temporibus enim doloribus quas odit et? Vel vero, reiciendis aspernatur dolorem blanditiis, at quae rerum doloremque aut qui ipsum fuga ut corporis, nobis voluptatibus. Aperiam, amet nisi. Amet accusantium praesentium illo perspiciatis modi id quo animi nemo, labore est cumque repudiandae in ab autem! Deserunt obcaecati, similique praesentium labore neque unde repellendus maxime commodi a eligendi quam debitis voluptatum iste ea suscipit saepe fugit, nulla hic perspiciatis modi. Dolore, cumque excepturi perspiciatis velit voluptates exercitationem ducimus soluta qui nisi doloribus aspernatur esse, maiores aliquam rem officiis perferendis eaque illo rerum laborum aut dolor totam placeat facere! Saepe quo dolorum aspernatur sapiente delectus perferendis officiis natus inventore, maiores tempora ipsa reprehenderit nesciunt odio perspiciatis necessitatibus nulla expedita, modi dolorem blanditiis pariatur! Maxime quidem natus esse non eaque blanditiis provident, enim nesciunt, corrupti voluptatibus reiciendis? Facere sed natus repellat voluptatibus perferendis nemo ab deleniti dolor? Repellendus architecto quasi, incidunt illo rerum quas exercitationem atque iure ipsa explicabo quod nemo aperiam aut ea harum error fugiat ut maiores et delectus, totam hic magni cupiditate. Maxime dolor nobis obcaecati! Maiores excepturi animi, repellat aperiam eos veritatis nihil porro quod temporibus voluptatibus possimus error sapiente rem atque. Alias beatae consequuntur laboriosam commodi velit ullam, consequatur, architecto dolores ipsum illum voluptatem consectetur quaerat illo eligendi earum aut praesentium exercitationem sed.</p>
+    </div>
+   
+    <script>
+        // JavaScript to show and hide the popup
+        const showPopupButton = document.getElementById("showPopup");
+        const errorPopup = document.getElementById("errorPopup");
+        const closePopupButton = document.getElementById("closePopup");
+        const overlay = document.querySelector(".overlay");
+
+        showPopupButton.addEventListener("click", function() {
+            errorPopup.style.display = "flex";
+        });
+
+        closePopupButton.addEventListener("click", function() {
+            errorPopup.style.display = "none";
+        });
+
+        overlay.addEventListener("click", function(event) {
+            if (event.target === overlay) {
+                errorPopup.style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Improved Carousel</title>
+    <style>
+        /* Basic styles for the carousel container and items */
+        .carousel-container {
+            max-width: 600px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-item {
+            flex: 0 0 100%;
+            max-width: 100%;
+            margin-right: 20px; /* Adjust spacing between items */
+        }
+
+        /* Navigation buttons styles */
+        .carousel-button {
+            cursor: pointer;
+        }
+
+        /* Hide default browser styles for list */
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="carousel-container">
+        <ul class="carousel">
+            <li class="carousel-item"><img src="butterflies-1127666_1280.jpg" alt="Image 1" width="800px" height="600px"></li>
+            <li class="carousel-item"><img src="pink-324175_1280.jpg" alt="Image 2" width="800px" height="600px"></li>
+            <li class="carousel-item"><img src="poppies-174276_1280.jpg" alt="Image 3" width="800px" height="600px"></li>
+            <li class="carousel-item"><img src="white-blossom-8066657_1280.jpg" alt="Image 3" width="800px" height="600px"></li>
+            <!-- Add more carousel items as needed -->
+        </ul>
+    </div>
+
+    <button class="carousel-button" onclick="prevSlide()">Previous</button>
+    <button class="carousel-button" onclick="nextSlide()">Next</button>
+
+    <script>
+        const carousel = document.querySelector('.carousel');
+        const carouselItems = document.querySelectorAll('.carousel-item');
+        let currentIndex = 0;
+
+        function showSlide(index) {
+            // Ensure the index is within bounds
+            if (index < 0) {
+                currentIndex = carouselItems.length - 1;
+            } else if (index >= carouselItems.length) {
+                currentIndex = 0;
+            }
+
+            const translateX = -currentIndex * 100;
+            carousel.style.transform = `translateX(${translateX}%)`;
+        }
+
+        function prevSlide() {
+            currentIndex--;
+            showSlide(currentIndex);
+        }
+
+        function nextSlide() {
+            currentIndex++;
+            showSlide(currentIndex);
+        }
+
+        // Show the initial slide
+        showSlide(currentIndex);
+
+        // Automatically advance the carousel every 3 seconds
+        setInterval(() => {
+            currentIndex++;
+            showSlide(currentIndex);
+        }, 3000);
+    </script>
+</body>
+</html>
